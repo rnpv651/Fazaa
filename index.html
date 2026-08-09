@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة فزعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        /* Header & Logos */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #eee;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #888;
+        }
+        .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-title h1 {
+            color: #c91c23;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: 700;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .hero-badge {
+            background-color: #c91c23;
+            color: white;
+            padding: 5px 15px;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .hero-name h2 {
+            color: #c91c23;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+        .hero-name p {
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .hero-person-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: flex;
+            padding: 20px;
+            font-size: 13px;
+            line-height: 1.6;
+            position: relative;
+        }
+        .features-col {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .features-col h3 {
+            color: #c91c23;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        .main-card-img {
+            width: 180px;
+            display: block;
+            margin: 20px auto;
+        }
+        ul {
+            list-style: none;
+            padding-right: 15px;
+        }
+        ul li {
+            position: relative;
+            margin-bottom: 10px;
+            border-right: 2px solid #c91c23;
+            padding-right: 10px;
+        }
+        
+        /* Other Features */
+        .other-features {
+            padding: 0 20px 20px;
+        }
+        .other-features-title {
+            background-color: #c91c23;
+            color: white;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .other-features ul li {
+            border-right: none;
+            padding-right: 20px;
+        }
+        .other-features ul li::before {
+            content: '•';
+            color: #c91c23;
+            font-size: 20px;
+            position: absolute;
+            right: 0;
+            top: -5px;
+        }
+
+        /* Call to Action Button */
+        .btn-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .btn {
+            display: block;
+            background-color: #1a365d;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #122540;
+        }
+
+        /* Family Cards Section */
+        .family-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #f7f9f7;
+        }
+        .cards-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .card-sm { width: 80px; }
+        .card-lg { width: 200px; }
+        
+        .family-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Table */
+        .family-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: right;
+            background: #fff;
+        }
+        .family-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .family-table td:first-child {
+            font-weight: 800;
+            width: 30%;
+            color: #555;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- الرأس والشعارات -->
+    <div class="header">
+        <!-- رابط شعار فزعة هنا -->
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQe0gYtn6uTtW_RBgR9m2l1cL276M49tLEmRfGVynO8gV2giBoL" alt="فزعة" class="logo-placeholder" style="border:none; background:transparent;">
+        
+        <div class="header-title">
+            <h1>بطاقة فزعة مقدمة للمقيمين<br>والمواطنين</h1>
+        </div>
+        
+        <!-- رابط الشعار الثاني هنا -->
+        <img src="https://i.imgur.com/rz3p1oh.jpeg" alt="شعار" class="logo-placeholder" style="border:none; background:transparent;">
+    </div>
+
+    <div class="subtitle">
+        مزايا هائلة لبطاقة «فزعة فخر الوطن»
+    </div>
+
+    <!-- قسم صورة الشيخ والنص -->
+    <div class="hero">
+        <div class="hero-badge">ترجمة لرؤية محمد بن زايد</div>
+        <!-- رابط صورة الشخصية هنا -->
+        <img src="https://mirrorbah.hopto.me/media/pics/1393913236.jpg" alt="سيف بن زايد" class="hero-person-img" style="background:#eee; margin-top:10px;">
+        <div class="hero-name">
+            <h2>سيف بن زايد</h2>
+            <p>وجه بإطلاق مبادرة «فزعة فخر الوطن»</p>
+        </div>
+    </div>
+
+    <!-- قسم مزايا البطاقة (يمين ويسار) -->
+    <div class="features-grid">
+        <div class="features-col">
+            <h3>لخدمة:</h3>
+            <ul>
+                <li>العاملين بالخطوط الأمامية لمواجهة «كوفيد - 19» بالدولة</li>
+            </ul>
+            <h3 style="margin-top:10px;">من:</h3>
+            <ul>
+                <li>أكثر من 2600 علامة تجارية</li>
+            </ul>
+            <h3 style="margin-top:10px;">عبر:</h3>
+            <ul>
+                <li>5500 موقع متنوع</li>
+                <li>أكثر من 6000 منتج غذائي واستهلاكي</li>
+            </ul>
+            <h3 style="margin-top:10px;">الخصومات تشمل:</h3>
+            <ul>
+                <li>المواد والمستلزمات الطبية والتجميلية الغير مشمولة في التأمين الصحي</li>
+            </ul>
+        </div>
+        
+        <div class="features-col">
+            <h3>مزايا البطاقة:</h3>
+            <ul>
+                <li>يستفيد منها أكثر من 80 ألفاً من العاملين في الخطوط الأمامية وعائلاتهم</li>
+                <li>تتيح لحامليها الحصول على عروض وتخفيضات حصرية لدى متاجر فزعة ومن خلال الموقع الإلكتروني</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- مزايا أخرى -->
+    <div class="other-features">
+        <div class="other-features-title">مزايا أخرى:</div>
+        <ul>
+            <li>خصومات على مختلف الخدمات من محال تأجير السيارات</li>
+            <li>خصومات في التأمين على السيارات</li>
+            <li>حجوزات الفنادق في أفضل الوجهات حول العالم</li>
+            <li>خصومات تصل إلى 40% في 131 مستشفى حول الإمارات</li>
+        </ul>
+    </div>
+
+    <!-- زر طلب البطاقة -->
+    <div class="btn-container">
+        <!-- التوجيه إلى id.html كما طلبت -->
+        <a href="id.html" class="btn">اطلب البطاقة الأن</a>
+    </div>
+
+    <!-- قسم بطاقات الأسرة -->
+    <div class="family-section">
+        <div class="cards-display">
+            <!-- روابط صور البطاقات الثلاث هنا -->
+            <img src="https://misc.fazaa.ae/static/media/usra-gold.37a39d381c313f5791ad.png" alt="بطاقة ذهبية" class="card-sm" style="background:#ddd; height:50px;">
+            <img src="https://fazaawebstore.s3.me-central-1.amazonaws.com/fazaawebsite/Platinum.png" alt="بطاقة سوداء" class="card-lg" style="background:#333; height:120px;">
+            <img src="https://misc.fazaa.ae/static/media/usra-silver.c90b175261a33b3061a4.png" alt="بطاقة فضية" class="card-sm" style="background:#ddd; height:50px;">
+        </div>
+        
+        <h2 class="family-title">بطاقة فزعة لكل الأسر الإماراتية<br>مربوطة بعدد الأبناء</h2>
+        
+        <table class="family-table">
+            <tr>
+                <td>عضوية فضية</td>
+                <td>للأسرة الإماراتية الجديدة من دون أبناء</td>
+            </tr>
+            <tr>
+                <td>عضوية ذهبية</td>
+                <td>للأسرة الإماراتية من 1-3 أبناء</td>
+            </tr>
+            <tr>
+                <td>عضوية بلاتينية</td>
+                <td>للأسرة الإماراتية التي تضم 4 أبناء فأكثر، أو التي يكون أحد أفرادها من أصحاب الهمم</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

