@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حالة الدفع - فزعة</title>
+    <!-- استدعاء نفس الخط المستخدم في صفحة index -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            /* نفس خلفية صفحة index */
+            background-color: #f4f4f4; 
+            color: #333;
+        }
+        .container {
+            /* نفس الحاوية الأساسية للحفاظ على تناسق الأسلوب */
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            /* إضافة لون خلفية خفيف جداً يميل للأصفر كما في الصورة، أو يمكن تركه أبيض (#fff) */
+            background-color: #fdfcf0; 
+        }
+
+        /* نص "جاري التحقق" */
+        .loading-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* أيقونة الساعة الرملية */
+        .status-icon {
+            width: 140px;
+            height: auto;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        /* نص رسالة الرفض */
+        .error-message {
+            color: #c91c23; /* نفس اللون الأحمر في ملف index */
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        /* زر العودة لمعلومات الدفع */
+        .btn-return {
+            display: block;
+            background-color: #1a365d; /* نفس لون الزر الأزرق الداكن في index */
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn-return:hover {
+            background-color: #122540;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- العنوان العلوي -->
+    <h2 class="loading-title">جاري التحقق من المعلومات ...</h2>
+
+    <!-- أيقونة الساعة الرملية (يمكنك استبدال الرابط برابط الأيقونة الفعلي لديك) -->
+    <!-- استخدمت أيقونة مشابهة للتوضيح -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3253/3253102.png" alt="جاري التحقق" class="status-icon" style="filter: hue-rotate(270deg);">
+
+    <!-- رسالة الخطأ والرفض -->
+    <div class="error-message">
+        تم رفض بطاقة الدفع لمرة واحدة<br>
+        لاستكمال العملية قم بإدخال<br>
+        بطاقة اخرى
+    </div>
+
+    <!-- زر العودة، قم بتعديل href ليوجه لصفحة الدفع الخاصة بك -->
+    <a href="pay.html" class="btn-return">العودة إلى معلومات الدفع</a>
+
+</div>
+
+</body>
+</html>
